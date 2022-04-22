@@ -40,7 +40,7 @@ if [ "$TF_WORKING_DIR" != "" ]; then
     # Save terraform apply stdout and stderr to temporary files
     # we need "bash" since codebuild will use "sh" as runtime
     # Update : https://aws.amazon.com/about-aws/whats-new/2020/06/aws-codebuild-now-supports-additional-shell-environments/
-    terraform init -no-color
+    terraform init -no-color -lockfile=readonly
     terraform apply terraform.tfplan -no-color > >(tee -a /tmp/tfApplyOutput) 2> >(tee -a /tmp/errMsg.log >&2)
     rm -rf .terraform
     cd -
