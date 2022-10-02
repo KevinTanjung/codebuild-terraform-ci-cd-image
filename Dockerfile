@@ -14,6 +14,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     rm -rf /var/cache/* && \
     apt-get clean && \
     apt-get autoremove --purge
+RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
+RUN apt-get install -y nodejs
 RUN locale-gen en_US.UTF-8
 ENV LANG='en_US.UTF-8' LANGUAGE='en_US:en' LC_ALL='en_US.UTF-8'
 RUN git clone -b v2.2.2 https://github.com/tfutils/tfenv.git ~/.tfenv && \
