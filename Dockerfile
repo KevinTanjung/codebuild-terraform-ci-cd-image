@@ -32,10 +32,10 @@ RUN python3 -m pip install --upgrade pip && \
 RUN tfenv install 0.11.15 &&\
     tfenv install 0.12.31 &&\
     tfenv install 0.13.7 &&\
-    tfenv install 1.0.3 &&\
+    tfenv install 1.0.11 &&\
     tfenv install 1.1.9 &&\
     tfenv install 1.2.9 &&\
-    tfenv install 1.3.6 &&\
+    tfenv install 1.3.7 &&\
     tfenv use 0.11.15
 
 # https://www.docker.com/blog/docker-can-now-run-within-docker/
