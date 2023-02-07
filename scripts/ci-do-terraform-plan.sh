@@ -16,7 +16,6 @@ echo "Working dir : $TF_WORKING_DIR"
 mkdir -p artifact
 if [ "$TF_WORKING_DIR" != "" ]; then
     cd $TF_WORKING_DIR
-    
     if [[ $(terraform version | head -n 1 | grep -Eo "[.0-9]+") =~ ^1\..* ]]; then
       terraform init -no-color -lockfile=readonly 2> /tmp/errMsg.log
     else
